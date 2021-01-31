@@ -1,59 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@android:color/darker_gray"
     android:clickable="true"
     android:focusable="true"
     android:foreground="?attr/selectableItemBackground">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@android:color/black"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/playName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:gravity="center"
-        android:textColor="@android:color/black"
-        android:textSize="30sp"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Name" />
-
     <ImageView
         android:id="@+id/imgBack"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="4dp"
-        android:src="@drawable/ic_baseline_fast_rewind_24"
+        android:src="@drawable/ic_prev"
+        app:layout_constraintBottom_toBottomOf="@+id/imgPause"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/playName" />
+        app:layout_constraintTop_toTopOf="@+id/imgPause" />
 
     <ImageView
         android:id="@+id/imgPause"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="4dp"
+        android:src="@drawable/ic_pause"
         app:layout_constraintEnd_toStartOf="@+id/imgNext"
-        android:src="@drawable/bg_play_pause"
         app:layout_constraintStart_toEndOf="@id/imgBack"
-        app:layout_constraintTop_toBottomOf="@id/playName" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imgNext"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="40dp"
-        android:src="@drawable/ic_baseline_fast_forward_24"
+        android:src="@drawable/ic_next"
+        app:layout_constraintBottom_toBottomOf="@+id/imgPause"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/playName" />
+        app:layout_constraintTop_toTopOf="@+id/imgPause" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

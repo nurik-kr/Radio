@@ -22,7 +22,7 @@ object NotificationHelper {
     private const val EXTRA_ACTION = "EXTRA_ACTION"
 
     fun createNotification(context: Context): Notification? {
-        createNotificationChannel(context) //канал для уведомления для каких то андроди и выше
+        createNotificationChannel(context) //канал для уведомления
 
         val notificationLayout = RemoteViews(BuildConfig.APPLICATION_ID, R.layout.view_notification)
 

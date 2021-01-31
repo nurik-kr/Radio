@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Radio</string>
     <string name="radio">RADIO</string>
+    <string name="stations">90.5</string>
+    <string name="desc">Divelement</string>
 </resources>

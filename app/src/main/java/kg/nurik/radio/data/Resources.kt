@@ -7,49 +7,43 @@ object Resources {
         val list = arrayListOf<RadioStations>()
         list.add(
             RadioStations(
-                "TUMAR.FM",
-                "http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio1_mf_p"
-            )
-        )
-        list.add(
-            RadioStations(
-                "EUROPA PLUS",
-                "http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio2_mf_p"
-            )
-        )
-        list.add(
-            RadioStations(
-                "BBC - Radio 3",
+                "89.0",
+                "Europa Plus",
                 "http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio3_mf_p"
             )
         )
         list.add(
             RadioStations(
-                "BBC - Radio 4",
+                "101.3",
+                "Kyrgyz FM",
                 "http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio4fm_mf_p"
             )
         )
         list.add(
             RadioStations(
-                "BBC - Radio 5",
+                "101.7",
+                "Manas FM",
                 "http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio5live_mf_p"
             )
         )
         list.add(
             RadioStations(
-                "BBC - Radio 6",
+                "102.5",
+                "Sanjyra FM",
                 "http://bbcmedia.ic.llnwd.net/stream/bbcmedia_6music_mf_p"
             )
         )
         list.add(
             RadioStations(
-                "BBC Radio Asian Network",
+                "103.3",
+                "Radio Ok",
                 "http://bbcmedia.ic.llnwd.net/stream/bbcmedia_asianet_mf_p"
             )
         )
         list.add(
             RadioStations(
-                "BBC World Service",
+                "105.6",
+                "Hit FM",
                 "http://bbcwssc.ic.llnwd.net/stream/bbcwssc_mp1_ws-eieuk"
             )
         )
@@ -59,6 +53,8 @@ object Resources {
 
 data class RadioStations(
     val name: String,
-    val stations: String
+    val desc: String,
+    val stations: String,
+    var isActivated: Boolean = false
 )
 

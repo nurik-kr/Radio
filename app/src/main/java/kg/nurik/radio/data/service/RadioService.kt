@@ -48,6 +48,10 @@ class RadioService : Service() {
         play(radioStations.backStation())
     }
 
+    fun pauseRadio() {
+        play(station = null)
+    }
+
     fun getActiveStation(): MutableLiveData<RadioStations> {
         return radioStations.radioLiveData
     }

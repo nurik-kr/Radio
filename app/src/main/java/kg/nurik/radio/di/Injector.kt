@@ -1,7 +1,7 @@
 package kg.nurik.radio.di
 
 import kg.nurik.radio.RadioApp
-import kg.nurik.radio.data.RadioStationsRepository
+import kg.nurik.radio.data.repository.RadioStationsRepository
 import kg.nurik.radio.utils.MediaPlayer
 import javax.inject.Inject
 

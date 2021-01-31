@@ -1,6 +1,8 @@
-package kg.nurik.radio.data
+package kg.nurik.radio.data.repository
 
 import androidx.lifecycle.MutableLiveData
+import kg.nurik.radio.data.RadioStations
+import kg.nurik.radio.data.Resources
 
 class RadioStationsRepository {
     var radioLiveData = MutableLiveData<RadioStations>().apply {

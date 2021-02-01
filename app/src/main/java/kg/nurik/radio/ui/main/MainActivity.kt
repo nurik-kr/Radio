@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.tabs.TabLayoutMediator
 import kg.nurik.radio.databinding.ActivityMainBinding
-import kg.nurik.radio.ui.main.favourite.FavouriteFragment
+import kg.nurik.radio.ui.favourite.FavouriteFragment
 import kg.nurik.radio.ui.popular.PopularFragment
 import kg.nurik.radio.utils.viewBinding
 import kg.nurik.radio.utils.viewModel
@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         list.add(
             ViewPagerModel(
                 FavouriteFragment(),
-                "Любимые"
+                "Проигрыватель"
             )
         )
         return list

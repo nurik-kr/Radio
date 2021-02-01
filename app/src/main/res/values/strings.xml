@@ -3,4 +3,9 @@
     <string name="radio">RADIO</string>
     <string name="stations">90.5</string>
     <string name="desc">Divelement</string>
+    <string name="favourite">Любимые</string>
+    <string name="playing_now">Playing now</string>
+    <string name="let_s_get_started">Let’s Get Started</string>
+    <string name="enjoy_the_best_radio_stations_from_your_home_don_t_miss_out_on_anything">Enjoy the best radio stations\nfrom your home, don\'t miss\nout on anything</string>
+    <string name="get_started">Get Started</string>
 </resources>

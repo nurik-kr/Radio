@@ -34,7 +34,7 @@ class PopularFragment : Fragment(R.layout.fragment_popular), SeekBar.OnSeekBarCh
     private val adapter by lazy {
         RadioAdapter() {
             radio = it
-            requireContext().bindService(intentService, serviceConnection, Context.BIND_AUTO_CREATE)
+            requireActivity().bindService(intentService, serviceConnection, Context.BIND_AUTO_CREATE)
             radioService?.chooseRadio(it)
             viewModel.isBound = true
         }
@@ -83,6 +83,7 @@ class PopularFragment : Fragment(R.layout.fragment_popular), SeekBar.OnSeekBarCh
                 Timber.d("onServiceDisconnected")
                 viewModel.isBound = false
                 viewPlayer.imgPause.isActivated = false
+                requireActivity().unbindService(serviceConnection)
             }
         }
     }
@@ -90,11 +91,11 @@ class PopularFragment : Fragment(R.layout.fragment_popular), SeekBar.OnSeekBarCh
     private fun setupListeners() {
         viewPlayer.imgPause.setOnClickListener {
             if (it.isActivated) {
-                requireContext().unbindService(serviceConnection)
+                requireActivity().unbindService(serviceConnection)
                 viewPlayer.imgPause.isActivated = false
                 viewModel.isBound = false
             } else {
-                requireContext().bindService(intentService, serviceConnection, Context.BIND_AUTO_CREATE)
+                requireActivity().bindService(intentService, serviceConnection, Context.BIND_AUTO_CREATE)
                 viewPlayer.imgPause.isActivated = true
                 viewModel.isBound = true
             }
@@ -107,17 +108,12 @@ class PopularFragment : Fragment(R.layout.fragment_popular), SeekBar.OnSeekBarCh
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        //For destroy service when activity is destroyed
-        requireContext().unbindService(serviceConnection)
-    }
-
     override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
         tvSoundGrom.text = seekBar.progress.toString()
     }
 
     override fun onStartTrackingTouch(seekBar: SeekBar) {}
     override fun onStopTrackingTouch(seekBar: SeekBar) {}
+
 
 }

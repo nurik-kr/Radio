@@ -1,6 +1,5 @@
 package kg.nurik.radio.ui.main
 
-import android.content.ServiceConnection
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.tabs.TabLayoutMediator
@@ -8,14 +7,10 @@ import kg.nurik.radio.databinding.ActivityMainBinding
 import kg.nurik.radio.ui.favourite.FavouriteFragment
 import kg.nurik.radio.ui.popular.PopularFragment
 import kg.nurik.radio.utils.viewBinding
-import kg.nurik.radio.utils.viewModel
 
 class MainActivity : AppCompatActivity() {
 
     private val binding by viewBinding(ActivityMainBinding::inflate)
-    private val viewModel by viewModel(MainViewModel::class) //ext fun to helper
-    private lateinit var serviceConnection: ServiceConnection
-
     private val adapterViewPager by lazy { PagerAdapter(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,11 +42,5 @@ class MainActivity : AppCompatActivity() {
             )
         )
         return list
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        //For destroy service when activity is destroyed
-        unbindService(serviceConnection)
     }
 }
